@@ -1,6 +1,8 @@
 project "ImGui"
 	kind "StaticLib"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "on"
 
 	targetdir ("bin/" .. OutputDir .. "/%{prj.name}")
 	objdir ("bin-int/" .. OutputDir .. "/%{prj.name}")
@@ -22,14 +24,12 @@ project "ImGui"
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++20"
-		staticruntime "off"
+        defines { "_CRT_SECURE_NO_WARNINGS", "IMGUI_IMPL_OPENGL_LOADER_CUSTOM" }
 
 	filter "system:linux"
-		pic "On"
 		systemversion "latest"
-		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "on"
+		pic "on"
 
 	filter "configurations:Debug"
 		runtime "Debug"

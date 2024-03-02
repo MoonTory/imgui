@@ -12,6 +12,15 @@ examples/*/Debug/*
 examples/*/Release/*
 examples/*/x64/*
 
+bin/
+bin-int/
+./bin
+./bin-int
+./bin/*
+./bin-int/*
+
+Makefile
+
 ## Visual Studio artifacts
 .vs
 ipch
